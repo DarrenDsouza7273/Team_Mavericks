@@ -29,7 +29,7 @@ const routes = [
   {
     name: 'Rooms',
     layout: '/admin',
-    path: '/nft-marketplace',
+    path: '/Rooms',
     icon: (
       <Icon
         as={MdOutlineShoppingCart}
@@ -50,4 +50,15 @@ const routes = [
   },
   ];
 
+
+  const extraroutes = [
+    {
+      name: 'Sign In',
+      layout: '/auth',
+      path: '/sign-in',
+      icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+      component: <SignInCentered />,
+    },
+  ];
 export default routes;
+export { extraroutes };
