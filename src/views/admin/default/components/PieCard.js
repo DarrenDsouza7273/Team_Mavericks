@@ -41,8 +41,8 @@ export default function Conversion(props) {
       </Flex>
 
       <PieChart
-        h='100%'
-        w='100%'
+        h='300px'
+        w='300px'
         chartData={pieChartData}
         chartOptions={pieChartOptions}
       />
