@@ -20,6 +20,14 @@ import SignInCentered from 'views/auth/signIn';
 
 const routes = [
   {
+    name: 'Sign In',
+    layout: '/admin',
+    path: '/sign-in',
+    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+    component: <SignInCentered />,
+  },
+
+  {
     name: 'Dashboard Manager',
     layout: '/admin',
     path: '/default',
@@ -48,13 +56,14 @@ const routes = [
     path: '/data-tables',
     component: <DataTables />,
   },
+
   ];
 
 
   const extraroutes = [
     {
       name: 'Sign In',
-      layout: '/auth',
+      layout: '/admin',
       path: '/sign-in',
       icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
       component: <SignInCentered />,
