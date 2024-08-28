@@ -27,7 +27,7 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: 'NFT Marketplace',
+    name: 'Rooms',
     layout: '/admin',
     path: '/nft-marketplace',
     icon: (
@@ -42,7 +42,7 @@ const routes = [
     secondary: true,
   },
   {
-    name: 'Data Tables',
+    name: 'Employee Logs',
     layout: '/admin',
     icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
     path: '/data-tables',
