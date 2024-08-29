@@ -1,6 +1,9 @@
-/* Add this to your CSS file, e.g., RoomPage.css */
-
 .rooms-page {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height to center vertically */
+    background-color: #f8f9fc; /* Light background for contrast */
     padding: 20px;
   }
   
@@ -8,12 +11,13 @@
     background-color: #422AFB; /* brand.500 color */
     color: white;
     border: none;
-    border-radius: 16px;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 50%; /* Make the button circular */
+    padding: 20px; /* Increase padding for larger button size */
+    font-size: 24px; /* Larger font size for the icon */
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
   
   .add-card-button:hover {
@@ -24,6 +28,7 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(66, 42, 251, 0.6);
   }
+  
   
   .cards-container {
     display: flex;
@@ -56,12 +61,28 @@
       background-color: #7551FF; /* brand.400 color for dark mode */
     }
   
-    .add-card-button:hover {
-      background-color: #422AFB; /* brand.500 color for dark mode hover */
-    }
+    .add-card-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #422AFB; /* brand.500 color */
+        color: white;
+        border: none;
+        border-radius: 16px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+        filter: none; /* Ensure no blur filter */
+        opacity: 1; /* Ensure full opacity */
+        box-shadow: none; /* Remove shadow if it's causing blur */
+      }
+      
   
     .room-card {
       background-color: #111c44; /* navy.800 color */
       color: white;
     }
   }
+  

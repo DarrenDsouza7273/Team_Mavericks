@@ -5,6 +5,7 @@ import './RoomPage.css';
 
 const RoomsPage = () => {
   const [cards, setCards] = useState([]);
+  
 
   const addCard = () => {
     setCards([...cards, { 

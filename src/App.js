@@ -4,6 +4,7 @@ import {} from 'react-router-dom';
 import AuthLayout from './layouts/auth';
 import AdminLayout from './layouts/admin';
 import RTLLayout from './layouts/rtl';
+import RoomPage from './components/Rooms/RoomPage';
 import {
   ChakraProvider,
   // extendTheme
@@ -11,7 +12,7 @@ import {
 import initialTheme from './theme/theme'; //  { themeGreen }
 import { useState } from 'react';
 // Chakra imports
-
+/* <Route path="/admin/Rooms" element={<RoomPage />} /> */
 export default function Main() {
   // eslint-disable-next-line
   const [currentTheme, setCurrentTheme] = useState(initialTheme);

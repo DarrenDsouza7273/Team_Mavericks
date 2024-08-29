@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Icon } from '@chakra-ui/react';
 import {
   MdBarChart,
@@ -13,7 +12,7 @@ import {
 import MainDashboard from 'views/admin/default';
 import NFTMarketplace from 'views/admin/marketplace';
 import DataTables from 'views/admin/dataTables';
-
+import RoomsPage from 'components/Rooms/RoomPage'; // Ensure this import is correct
 
 // Auth Imports
 import SignInCentered from 'views/auth/signIn';
@@ -46,7 +45,7 @@ const routes = [
         color="inherit"
       />
     ),
-    component: <NFTMarketplace />,
+    component: <RoomsPage />, // Corrected component here
     secondary: true,
   },
   {
@@ -56,18 +55,17 @@ const routes = [
     path: '/data-tables',
     component: <DataTables />,
   },
+];
 
-  ];
+const extraroutes = [
+  {
+    name: 'Sign In',
+    layout: '/admin',
+    path: '/sign-in',
+    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+    component: <SignInCentered />,
+  },
+];
 
-
-  const extraroutes = [
-    {
-      name: 'Sign In',
-      layout: '/admin',
-      path: '/sign-in',
-      icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
-      component: <SignInCentered />,
-    },
-  ];
 export default routes;
 export { extraroutes };
