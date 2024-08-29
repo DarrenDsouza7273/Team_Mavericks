@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCog } from "@fortawesome/free-solid-svg-icons";
+import './RoomPage.css';
 
 const RoomsPage = () => {
   const [cards, setCards] = useState([]);
