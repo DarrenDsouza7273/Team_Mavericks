@@ -79,8 +79,36 @@ export default function UserReports() {
               }
             />
           }
-          name='Violations'
-          value='1'
+          name='Registered Employees'
+          value='45'
+        />
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdAddTask} color={brandColor} />
+              }
+            />
+          }
+          name='Today Employees Verified'
+          value='34'
+        />
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdFileCopy} color={brandColor} />
+              }
+            />
+          }
+          name='Total logs generated'
+          value='120+'
         />
       </SimpleGrid>
 
@@ -89,11 +117,12 @@ export default function UserReports() {
         <WeeklyRevenue />
       </SimpleGrid>
       <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
-        <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <DailyTraffic />
+        {/* <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'> */}
+          {/* <DailyTraffic /> */}
           <PieCard />
-        </SimpleGrid>
+          <MiniCalendar h='100%' minW='100%' selectRange={false} />
+        {/* </SimpleGrid> */}
       </SimpleGrid>
       <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
         <ComplexTable
@@ -102,7 +131,6 @@ export default function UserReports() {
         />
         <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
           <Tasks />
-          <MiniCalendar h='100%' minW='100%' selectRange={false} />
         </SimpleGrid>
       </SimpleGrid>
     </Box>

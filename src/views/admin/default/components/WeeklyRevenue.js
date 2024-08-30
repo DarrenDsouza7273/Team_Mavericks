@@ -22,13 +22,13 @@ export default function WeeklyRevenue(props) {
       id: "basic-bar",
     },
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     },
   };
   const chartSeries = [
     {
       name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
+      data: [85, 45, 55, 70, 49, 30],
     },
   ];
 
@@ -55,7 +55,7 @@ export default function WeeklyRevenue(props) {
           fontWeight="700"
           lineHeight="100%"
         >
-          Weekly Revenue
+          Daily Users
         </Text>
         <Button
           align="center"

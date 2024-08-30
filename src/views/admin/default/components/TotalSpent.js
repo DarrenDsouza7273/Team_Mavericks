@@ -25,13 +25,14 @@ export default function TotalSpent(props) {
       id: "basic-line",
     },
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      name: "Months",
+      categories: [ 'April','May', 'June', 'July', 'Aug', 'Sep'],
     },
   };
   const chartSeries = [
     {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
+      name: "Detection",
+      data: [ 45, 50, 49, 60, 75, 70],
     },
   ];
 
@@ -73,7 +74,7 @@ export default function TotalSpent(props) {
               color={textColorSecondary}
               me="4px"
             />
-            This month
+            Last 6 Months
           </Button>
           <Button
             ms="auto"
@@ -138,6 +139,7 @@ export default function TotalSpent(props) {
             width="100%"
             height="260px"
           />
+          Detection of PPE Kit in 6 Months
         </Box>
       </Flex>
     </Card>

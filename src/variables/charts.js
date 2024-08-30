@@ -209,10 +209,10 @@ export const barChartOptionsConsumption = {
 };
 
 export const pieChartOptions = {
-  labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  labels: ["Helmet", "Boots", "Vest", "Gloves","Glasses"],
+  colors: ["#4318FF", "#6AD2FF", "#A7C7E7", "#1E90FF", "#4682B4"],
   chart: {
-    width: "50px",
+    width: "100px",
   },
   states: {
     hover: {
@@ -239,7 +239,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: ["#4318FF", "#6AD2FF", "#A7C7E7", "#1E90FF", "#4682B4"]
   },
   tooltip: {
     enabled: true,
@@ -247,7 +247,7 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [63, 25, 12];
+export const pieChartData = [45, 21, 16,12,6];
 
 // Total Spent Default
 
