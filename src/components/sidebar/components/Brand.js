@@ -13,7 +13,15 @@ export function SidebarBrand() {
 
   return (
     <Flex align='center' direction='column'>
-      <HorizonLogo h='26px' w='175px' my='32px' color={logoColor} />
+    <h2 style={{
+      fontSize: '26px',
+      width: '175px',
+      margin: '32px 0',
+      fontFamily: 'Your Font Family, sans-serif',
+      fontWeight: 'bold'
+    }}>
+      HSE.Shieldify
+    </h2>
       <HSeparator mb='20px' />
     </Flex>
   );

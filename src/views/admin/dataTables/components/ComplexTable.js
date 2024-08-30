@@ -58,6 +58,42 @@ export default function ComplexTable(props) {
         </Flex>
       ),
     }),
+    columnHelper.accessor('emp', {
+      id: 'emp',
+      header: () => (
+        <Text
+          justifyContent="space-between"
+          align="center"
+          fontSize={{ sm: '10px', lg: '12px' }}
+          color="gray.400"
+        >
+          Employeer ID
+        </Text>
+      ),
+      cell: (info) => (
+        <Text color={textColor} fontSize="sm" fontWeight="700">
+          {info.getValue()}
+        </Text>
+      ),
+    }),
+    columnHelper.accessor('dep', {
+      id: 'dep',
+      header: () => (
+        <Text
+          justifyContent="space-between"
+          align="center"
+          fontSize={{ sm: '10px', lg: '12px' }}
+          color="gray.400"
+        >
+          Department
+        </Text>
+      ),
+      cell: (info) => (
+        <Text color={textColor} fontSize="sm" fontWeight="700">
+          {info.getValue()}
+        </Text>
+      ),
+    }),
     columnHelper.accessor('status', {
       id: 'status',
       header: () => (
@@ -119,30 +155,30 @@ export default function ComplexTable(props) {
         </Text>
       ),
     }),
-    columnHelper.accessor('progress', {
-      id: 'progress',
-      header: () => (
-        <Text
-          justifyContent="space-between"
-          align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
-        >
-          PROGRESS
-        </Text>
-      ),
-      cell: (info) => (
-        <Flex align="center">
-          <Progress
-            variant="table"
-            colorScheme="brandScheme"
-            h="8px"
-            w="108px"
-            value={info.getValue()}
-          />
-        </Flex>
-      ),
-    }),
+    // columnHelper.accessor('progress', {
+    //   id: 'progress',
+    //   header: () => (
+    //     <Text
+    //       justifyContent="space-between"
+    //       align="center"
+    //       fontSize={{ sm: '10px', lg: '12px' }}
+    //       color="gray.400"
+    //     >
+    //       PROGRESS
+    //     </Text>
+    //   ),
+    //   cell: (info) => (
+    //     <Flex align="center">
+    //       <Progress
+    //         variant="table"
+    //         colorScheme="brandScheme"
+    //         h="8px"
+    //         w="108px"
+    //         value={info.getValue()}
+    //       />
+    //     </Flex>
+    //   ),
+    // }),
   ];
   const [data, setData] = React.useState(() => [...defaultData]);
   const table = useReactTable({
@@ -159,7 +195,7 @@ export default function ComplexTable(props) {
   return (
     <Card
       flexDirection="column"
-      w="100%"
+      w="120%"
       px="0px"
       overflowX={{ sm: 'scroll', lg: 'hidden' }}
     >
@@ -170,7 +206,7 @@ export default function ComplexTable(props) {
           fontWeight="700"
           lineHeight="100%"
         >
-          Complex Table
+          User Data Table
         </Text>
         <Menu />
       </Flex>

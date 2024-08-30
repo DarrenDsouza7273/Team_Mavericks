@@ -2,34 +2,39 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCog } from "@fortawesome/free-solid-svg-icons";
 import './RoomPage.css';
+import initialCards from './cardData'; // Import the card data
 
 const RoomsPage = () => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(initialCards);
 
   const addCard = () => {
-    setCards([...cards, { 
-      id: cards.length, 
-      fields: [],
-      settings: {
-        gloves: false,
-        helmet: false,
-        boots: false,
-        vest: false,  // New setting for vest
-        mask: false,  // New setting for mask
-        suit: false   // New setting for suit
-      },
-      showSettings: false
-    }]);
+    setCards(prevCards => [
+      ...prevCards, 
+      { 
+        id: prevCards.length, 
+        fields: [],
+        settings: {
+          gloves: false,
+          helmet: false,
+          boots: false,
+          vest: false,
+          glasses: false,
+          // mask: false,
+          // suit: false
+        },
+        showSettings: false
+      }
+    ]);
   };
 
   const addField = (cardId) => {
-    setCards(cards.map(card => 
+    setCards(prevCards => prevCards.map(card => 
       card.id === cardId ? { ...card, fields: [...card.fields, ""] } : card
     ));
   };
 
   const updateField = (cardId, fieldIndex, value) => {
-    setCards(cards.map(card => 
+    setCards(prevCards => prevCards.map(card => 
       card.id === cardId ? {
         ...card,
         fields: card.fields.map((field, index) => 
@@ -40,13 +45,13 @@ const RoomsPage = () => {
   };
 
   const toggleSettings = (cardId) => {
-    setCards(cards.map(card =>
+    setCards(prevCards => prevCards.map(card =>
       card.id === cardId ? { ...card, showSettings: !card.showSettings } : card
     ));
   };
 
   const toggleSetting = (cardId, setting) => {
-    setCards(cards.map(card =>
+    setCards(prevCards => prevCards.map(card =>
       card.id === cardId ? {
         ...card,
         settings: {
@@ -65,7 +70,7 @@ const RoomsPage = () => {
       <div className="cards-container">
         {cards.map((card) => (
           <div key={card.id} className="room-card">
-            <p>Room Card {card.id + 1}</p>
+            <p>Department {card.id + 1}</p>
             <div className="room-card-content">
               {card.fields.map((field, index) => (
                 <input
@@ -73,13 +78,13 @@ const RoomsPage = () => {
                   type="text"
                   value={field}
                   onChange={(e) => updateField(card.id, index, e.target.value)}
-                  placeholder={`Field ${index + 1}`}
+                  placeholder={`Employer ID ${index + 1}`}
                 />
               ))}
             </div>
             <div className="room-card-actions">
               <button onClick={() => addField(card.id)}>
-                <FontAwesomeIcon icon={faPlus} /> Add Field
+                <FontAwesomeIcon icon={faPlus} /> Add Employer
               </button>
               <button onClick={() => toggleSettings(card.id)}>
                 <FontAwesomeIcon icon={faCog} /> Settings
@@ -115,20 +120,20 @@ const RoomsPage = () => {
                     onChange={() => toggleSetting(card.id, 'vest')}
                   /> Vest
                 </label>
-                <label>
+                {/* <label>
                   <input
                     type="checkbox"
                     checked={card.settings.mask}
                     onChange={() => toggleSetting(card.id, 'mask')}
                   /> Mask
-                </label>
+                </label> */}
                 <label>
                   <input
                     type="checkbox"
                     checked={card.settings.suit}
-                    onChange={() => toggleSetting(card.id, 'suit')}
-                  /> Suit
-                </label>
+                    onChange={() => toggleSetting(card.id, 'glasses')}
+                  /> Glasses
+                </label> 
               </div>
             )}
           </div>

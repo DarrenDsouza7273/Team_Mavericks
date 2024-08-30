@@ -38,7 +38,7 @@ export default function Footer() {
         {" "}
         &copy; {1900 + new Date().getYear()}
         <Text as='span' fontWeight='500' ms='4px'>
-          Team Mavericks Love you :3
+          Team Mavericks
           <Link
             mx='3px'
             color={textColor}
@@ -47,7 +47,7 @@ export default function Footer() {
           </Link>
         </Text>
       </Text>
-      <List display='flex'>
+      {/* <List display='flex'>
         <ListItem
           me={{
             base: "20px",
@@ -92,7 +92,7 @@ export default function Footer() {
             Blog
           </Link>
         </ListItem>
-      </List>
+      </List> */}
     </Flex>
   );
 }
