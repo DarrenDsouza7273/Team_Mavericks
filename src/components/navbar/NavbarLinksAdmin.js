@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 // Custom Components
 import { ItemContent } from 'components/menu/ItemContent';
-import { SearchBar } from 'components/navbar/searchBar/SearchBar';
+
 import { SidebarResponsive } from 'components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
 import React from 'react';

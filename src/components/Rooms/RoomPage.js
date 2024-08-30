@@ -5,7 +5,6 @@ import './RoomPage.css';
 
 const RoomsPage = () => {
   const [cards, setCards] = useState([]);
-  
 
   const addCard = () => {
     setCards([...cards, { 
@@ -14,7 +13,10 @@ const RoomsPage = () => {
       settings: {
         gloves: false,
         helmet: false,
-        boots: false
+        boots: false,
+        vest: false,  // New setting for vest
+        mask: false,  // New setting for mask
+        suit: false   // New setting for suit
       },
       showSettings: false
     }]);
@@ -105,6 +107,27 @@ const RoomsPage = () => {
                     checked={card.settings.boots}
                     onChange={() => toggleSetting(card.id, 'boots')}
                   /> Boots
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={card.settings.vest}
+                    onChange={() => toggleSetting(card.id, 'vest')}
+                  /> Vest
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={card.settings.mask}
+                    onChange={() => toggleSetting(card.id, 'mask')}
+                  /> Mask
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={card.settings.suit}
+                    onChange={() => toggleSetting(card.id, 'suit')}
+                  /> Suit
                 </label>
               </div>
             )}

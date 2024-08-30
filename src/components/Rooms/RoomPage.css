@@ -1,88 +1,201 @@
+/* Container for the entire page */
 .rooms-page {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height to center vertically */
-    background-color: #f8f9fc; /* Light background for contrast */
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fc;
+  padding: 20px;
+}
+
+/* Style for the add card button */
+.add-card-button {
+  background-color: #422afb;
+  color: white;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.add-card-button:hover {
+  background-color: #3311db;
+  transform: scale(1.05);
+}
+
+.add-card-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(66, 42, 251, 0.4);
+}
+
+/* Container for cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Styles for each room card */
+.room-card {
+  background-color: #f0f0f0; /* Lightest shade of grey */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 320px;
+  min-height: 180px;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(112, 144, 176, 0.2);
+}
+
+/* Content area within the room card */
+.room-card-content {
+  margin-bottom: 15px;
+  color: #2b3674;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Actions area for buttons inside the room card */
+.room-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7c93;
+}
+
+/* Styling for input fields */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background-color: #e6e6e6; /* Slight grey shade to match the card */
+  color: #2b3674;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #422afb;
+  box-shadow: 0 0 0 3px rgba(66, 42, 251, 0.2);
+  outline: none;
+}
+
+/* Styling for checkboxes */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  background-color: #e6e6e6; /* Match the light grey of input fields */
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none; /* Remove default checkbox styles */
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px; /* Increase spacing between checkbox and text */
+}
+
+input[type="checkbox"]:checked {
+  background-color: #422afb; /* Checkbox tick color */
+  border-color: #422afb;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #422afb;
+  box-shadow: 0 0 5px rgba(66, 42, 251, 0.3);
+}
+
+/* Label styling for better spacing */
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Increase spacing between checkbox and text */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
   .add-card-button {
-    background-color: #422AFB; /* brand.500 color */
+    background-color: #7551ff;
     color: white;
-    border: none;
-    border-radius: 50%; /* Make the button circular */
-    padding: 20px; /* Increase padding for larger button size */
-    font-size: 24px; /* Larger font size for the icon */
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.25s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 2px solid #222;
   }
-  
+
   .add-card-button:hover {
-    background-color: #3311DB; /* brand.600 color */
+    background-color: #422afb;
   }
-  
-  .add-card-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(66, 42, 251, 0.6);
-  }
-  
-  
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
+
   .room-card {
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 14px 17px 40px 4px rgba(112, 144, 176, 0.08);
-    width: 100%;
-    max-width: 300px;
+    background-color: #111c44;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
-  
-  .room-card-content {
-    margin-bottom: 15px;
+
+  .room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   }
-  
-  .room-card-actions {
-    display: flex;
-    justify-content: space-between;
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    background-color: #2b2b2b;
+    color: white;
+    border: 1px solid #444;
   }
-  
-  /* Dark mode styles */
-  @media (prefers-color-scheme: dark) {
-    .add-card-button {
-      background-color: #7551FF; /* brand.400 color for dark mode */
-    }
-  
-    .add-card-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: #422AFB; /* brand.500 color */
-        color: white;
-        border: none;
-        border-radius: 16px;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background-color 0.25s ease;
-        filter: none; /* Ensure no blur filter */
-        opacity: 1; /* Ensure full opacity */
-        box-shadow: none; /* Remove shadow if it's causing blur */
-      }
-      
-  
-    .room-card {
-      background-color: #111c44; /* navy.800 color */
-      color: white;
-    }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #7551ff;
+    box-shadow: 0 0 0 3px rgba(117, 81, 255, 0.3);
   }
-  
+
+  input[type="checkbox"] {
+    background-color: #2b2b2b; /* Match dark mode input background */
+    border-color: #444;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: #7551ff; /* Dark mode tick color */
+  }
+}
+.room-card-settings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px; /* Spacing between checkboxes */
+}
+
+/* Each checkbox label styling */
+.room-card-settings label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between checkbox and text */
+}
